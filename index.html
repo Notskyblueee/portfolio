@@ -9,9 +9,6 @@
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <style>
-/* =========================
-   GLOBAL STYLES
-========================= */
 * {
     margin: 0;
     padding: 0;
@@ -28,9 +25,6 @@ body, html {
     position: relative;
 }
 
-/* =========================
-   PIXELATED BACKGROUND
-========================= */
 body::before {
     content: '';
     position: fixed;
@@ -43,11 +37,8 @@ body::before {
     z-index: -3;
 }
 
-/* Floating cubes */
 .cube {
     position: absolute;
-    width: 20px;
-    height: 20px;
     background: linear-gradient(135deg, #0ff, #08f);
     opacity: 0.7;
     animation: floatCube linear infinite;
@@ -59,9 +50,6 @@ body::before {
     100% { transform: translateY(0) rotate(360deg); }
 }
 
-/* =========================
-   SECTIONS
-========================= */
 section {
     width: 100%;
     min-height: 100vh;
@@ -83,9 +71,6 @@ section.active {
     z-index: 2;
 }
 
-/* =========================
-   NAV BUTTONS
-========================= */
 .nav-btns {
     margin-top: 30px;
     display: flex;
@@ -111,9 +96,6 @@ section.active {
     box-shadow: 0 0 20px #0ff, 0 0 30px #08f;
 }
 
-/* =========================
-   CARDS
-========================= */
 .card {
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
@@ -131,43 +113,6 @@ section.active {
     box-shadow: 0 0 20px #0ff, 0 0 30px #08f;
 }
 
-/* =========================
-   HOME
-========================= */
-#home h1 {
-    font-size: 2.6rem;
-    text-align: center;
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff, 0 0 20px #08f;
-}
-
-#home .subtitle {
-    margin-top: 15px;
-    max-width: 700px;
-    text-align: center;
-    color: #bbb;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-/* =========================
-   ABOUT
-========================= */
-#about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #08f;
-}
-
-/* =========================
-   SERVICES
-========================= */
-#services h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #0ff;
-}
-
 .service-card {
     background: rgba(0,255,255,0.1);
     border: 2px solid #0ff;
@@ -182,15 +127,6 @@ section.active {
 .service-card:hover {
     transform: scale(1.05) rotate(-2deg);
     box-shadow: 0 0 15px #0ff, 0 0 25px #08f;
-}
-
-/* =========================
-   CONTACT
-========================= */
-#contact h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #0ff;
 }
 
 .contact-cards {
@@ -211,28 +147,11 @@ section.active {
     transition: 0.3s;
 }
 
-.contact-card i {
-    color: #0ff;
-    margin-bottom: 10px;
-}
-
-.contact-card h3 {
-    color: #08f;
-}
-
-.contact-card p {
-    color: #aaa;
-    font-size: 14px;
-}
-
 .contact-card:hover {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 0 20px #0ff, 0 0 30px #08f;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 768px) {
     .card, .service-card, .contact-card {
         width: 85%;
@@ -248,14 +167,15 @@ section.active {
 <!-- HOME -->
 <section id="home" class="active">
     <h1>Hi, I’m Notskyblueee — Minecraft & Discord Developer</h1>
-    <p class="subtitle">
-        Who focuses on creating, managing, and optimizing servers.  
-        I work on setups, configurations, designs, performance improvements, etc.
+    <p style="margin-top:15px; max-width:700px; text-align:center; color:#bbb;">
+        I focus on creating, managing, and optimizing servers.
+        Setup, configurations, designs & performance improvements.
     </p>
     <div class="nav-btns">
         <button onclick="showSection('about')">About</button>
         <button onclick="showSection('services')">Services</button>
         <button onclick="showSection('contact')">Contact</button>
+        <button onclick="showSection('payment')">Payment</button>
     </div>
 </section>
 
@@ -270,6 +190,7 @@ section.active {
         <button onclick="showSection('home')">Home</button>
         <button onclick="showSection('services')">Services</button>
         <button onclick="showSection('contact')">Contact</button>
+        <button onclick="showSection('payment')">Payment</button>
     </div>
 </section>
 
@@ -278,12 +199,13 @@ section.active {
     <h2>My Services & Prices</h2>
     <div class="service-card">Discord Developing – ₹100</div>
     <div class="service-card">Discord + Full Bot Setup – ₹180</div>
-    <div class="service-card">Minecraft Small Server (Survival / Lifesteal Network) – ₹200</div>
-    <div class="service-card">Minecraft Big Network (mcFleet / FireMC) – ₹320</div>
+    <div class="service-card">Minecraft Small Server – ₹200</div>
+    <div class="service-card">Minecraft Big Network – ₹320</div>
     <div class="nav-btns">
         <button onclick="showSection('home')">Home</button>
         <button onclick="showSection('about')">About</button>
         <button onclick="showSection('contact')">Contact</button>
+        <button onclick="showSection('payment')">Payment</button>
     </div>
 </section>
 
@@ -292,12 +214,10 @@ section.active {
     <h2>Contact Me</h2>
     <div class="contact-cards">
         <div class="contact-card" onclick="window.open('https://discord.com/invite/UkCwkCuWV5','_blank')">
-            <i class="fab fa-discord fa-2x"></i>
             <h3>Discord Ticket</h3>
             <p>Click to open a ticket</p>
         </div>
         <div class="contact-card" onclick="window.location.href='mailto:pragyanpatragaming@gmail.com'">
-            <i class="fas fa-envelope fa-2x"></i>
             <h3>Email Me</h3>
             <p>pragyanpatragaming@gmail.com</p>
         </div>
@@ -306,6 +226,26 @@ section.active {
         <button onclick="showSection('home')">Home</button>
         <button onclick="showSection('about')">About</button>
         <button onclick="showSection('services')">Services</button>
+        <button onclick="showSection('payment')">Payment</button>
+    </div>
+</section>
+
+<!-- PAYMENT -->
+<section id="payment">
+    <h2>Secure Payment</h2>
+    <div class="card">
+        Click below to complete your payment securely.
+    </div>
+    <div class="nav-btns">
+        <button onclick="window.open('https://paymentnotsky.vercel.app/','_blank')">
+            Proceed to Payment
+        </button>
+    </div>
+    <div class="nav-btns">
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('about')">About</button>
+        <button onclick="showSection('services')">Services</button>
+        <button onclick="showSection('contact')">Contact</button>
     </div>
 </section>
 
